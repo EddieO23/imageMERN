@@ -5,8 +5,11 @@ import morgan from 'morgan'
 import mongoose from "mongoose";
 import imageRoute from "./Routes/imageRoutes.js";
 import { v2 as cloudinary } from 'cloudinary'
+import bodyParser from "body-parser";
  
 const app = express()
+
+app.use(bodyParser.json({limit: "50mb"}))
 
 app.use(morgan("dev"))
 
